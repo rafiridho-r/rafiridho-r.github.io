@@ -23,7 +23,7 @@ repository               : "rafiridho-r/rafiridho-r.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpeg"
   name             : "Rafi Ridho Ramadhan"
   pronouns         : "he/him" # example: "she/her"  
   bio              : "Electrical Engineering Student focusing on Robotics Perception and Computer Vision."
