@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Rafi Ridho Ramadhan"
 title_separator          : "-"
 name                     : &name "Rafi Ridho Ramadhan"
-description              : &description "Electrical Engineering Student | Robotics Perception & Computer Vision"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : "Electrical Engineering Graduate | Computer Vision & Robotics Perception | Robust Object-Centric 3D Perception for Visual Navigation"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://rafiridho-r.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,11 +26,11 @@ author:
   avatar           : "profile.jpeg"
   name             : "Rafi Ridho Ramadhan"
   pronouns         : "he/him" # example: "she/her"  
-  bio              : "Passionate about advancing visual-centric robotics perception to build intelligent and autonomous systems."
+  bio              : "Computer Vision & Robotics Perception — building towards robust object-centric 3D perception for visual navigation."
   location         : "Lampung, Indonesia"
-  employer         : "Universitas Lampung (Alumnus)"
-  uri              : "https://rafiridho-r.github.io" # URL
-  email            : "rafiridhoramadhan@gmail.com"
+  employer         :
+  github           : "rafiridho-r"
+  linkedin         : "rafi-ridho-ramadhan-"
 
   # Academic websites
   academia         : # URL
