@@ -1,0 +1,25 @@
+name: Validate Jekyll site
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [research-portfolio-v3.1]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --trace
