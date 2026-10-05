@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: ""
-excerpt: "Computer Vision and Robotics Perception"
+excerpt: "Rafi Ridho Ramadhan"
 author_profile: true
 redirect_from:
   - /about/
@@ -10,9 +10,9 @@ redirect_from:
 
 <div class="academic-home-intro">
   <p class="academic-home-intro__meta">Electrical Engineering · Universitas Lampung</p>
-  <h1>Computer Vision & Robotics Perception</h1>
+  <h1>Rafi Ridho Ramadhan</h1>
   <p class="academic-home-intro__lead">
-    I am an Electrical Engineering graduate from Universitas Lampung. My research interests are in computer vision and visual-centric robotics perception, with a current focus on <strong>robust object-centric 3D perception for visual navigation</strong>.
+    I am an Electrical Engineering graduate from Universitas Lampung, Indonesia. I enjoy building technical systems, learning deeply, and turning ideas into carefully documented implementations.
   </p>
   <p class="academic-home-intro__links">
     <a href="/portfolio/">Research</a>
@@ -25,29 +25,14 @@ redirect_from:
   </p>
 </div>
 
-## Research
+## About
 
-My current work develops a progression from **tracking and optimisation**, through **visual ego-motion** and **learned 3D perception**, toward **robust 3D multi-object tracking under detection and pose uncertainty**.
+I received my **B.Eng. in Electrical Engineering** from **Universitas Lampung** in 2026 with a **GPA of 3.87/4.00 (Cum Laude)**. I ranked **2nd in the Electrical Engineering graduating cohort** and within the **top 5% of the Electrical Engineering Cohort 2022**.
 
-<div class="academic-work-list academic-work-list--compact">
-{% for project in site.data.research_portfolio.projects %}
-  <article class="academic-work-item">
-    <div class="academic-work-item__meta">{{ project.code }} · {{ project.capability }} · {{ project.status }}</div>
-    <h3>{{ project.title }}</h3>
-    <p>{{ project.question }}</p>
-    {% if project.url %}<p class="academic-work-item__links"><a href="{{ project.url | relative_url }}">Project page</a></p>{% endif %}
-  </article>
-{% endfor %}
-</div>
+My undergraduate years combined academic study with hands-on engineering work. I was involved with the **Fixed-Wing Division of the Unila Robotics and Automation team**, contributing to hardware integration, flight-system preparation, and system testing.
 
-<p><a href="/portfolio/">View research programme →</a></p>
+Outside formal coursework, I continue to strengthen my programming, mathematics, technical English, and engineering practice through independent study and project work.
 
-## Background
+## Links
 
-I received my **B.Eng. in Electrical Engineering** from **Universitas Lampung** in 2026 with a **GPA of 3.87/4.00 (Cum Laude)** and ranked **2nd in the Electrical Engineering graduating cohort**.
-
-My undergraduate research involved spatio-temporal deep learning, temporal attention, benchmarking, robustness analysis, and cross-domain evaluation. I also worked with the fixed-wing division of the Unila Robotics and Automation team on hardware integration, flight-system preparation, and system testing.
-
-## Current direction
-
-I am building research depth in classical and learned computer vision, camera geometry, state estimation, 3D perception, tracking, and navigation-relevant perception. Project pages are published only when the corresponding implementation and experimental evidence are ready to support them.
+For technical and research work, see the dedicated [Research](/portfolio/) page. A concise academic and professional record is available on my [CV](/cv/).
