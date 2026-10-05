@@ -11,54 +11,36 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **B.Eng. in Electrical Engineering**, Universitas Lampung, 2026
+  * GPA: **3.87 / 4.00**, Cum Laude
+  * Ranked **2nd in the Electrical Engineering graduating cohort**, Graduation Period 8, Batch 1, 2026
+  * Top 5% of the Electrical Engineering Cohort 2022
 
-Work experience
+Research interests
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Computer Vision
+* Visual-centric Robotics Perception
+* 3D Object Detection and Tracking
+* Visual Ego-Motion and State Estimation
+* Visual Navigation
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+Research projects
+======
+* **P1 — CACF Reproduction + Robust Context-Update Extension**
+* **P2 — Robust RGB-D Visual Odometry in Dynamic Scenes**
+* **P3 — Scaled PointPillars Reproduction + Point-Cloud Robustness Study**
+* **P4 — Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty**
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
+Experience
+======
+* **Fixed-Wing Division, Unila Robotics and Automation**
+  * Hardware integration, flight-system preparation, and system testing for a national student UAV competition.
+
+* **Undergraduate Research, Universitas Lampung**
+  * Spatio-temporal deep learning, temporal attention, controlled benchmarking, robustness analysis, cross-domain evaluation, and quantitative model evaluation.
+
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* **Programming:** Python, C++
+* **Computer Vision / Machine Learning:** PyTorch, OpenCV
+* **Research tooling:** Git, reproducible experiment configuration, quantitative evaluation
