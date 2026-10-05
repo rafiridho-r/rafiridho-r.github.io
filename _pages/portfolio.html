@@ -1,14 +1,32 @@
 ---
 layout: archive
-title: "Portfolio"
+title: "Research"
 permalink: /portfolio/
 author_profile: true
 ---
 
-{% include base_path %}
+{% assign rp = site.data.research_portfolio %}
+<div class="research-index">
+  <div class="research-index__intro">
+    <p><strong>{{ rp.research_identity }}</strong></p>
+    <p>{{ rp.programme_note }}</p>
+  </div>
 
+  {% include research/progression.html %}
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
-{% endfor %}
+  <div class="research-project-card-grid">
+  {% for project in rp.projects %}
+    <article class="research-project-card">
+      <div class="research-project-card__code">{{ project.code }} · {{ project.capability }}</div>
+      <h3>{{ project.title }}</h3>
+      <p class="research-project-card__question">{{ project.question }}</p>
+      <p><strong>Status:</strong> {{ project.status }}</p>
+      <p><strong>What it enables next:</strong> {{ project.next }}</p>
+      {% if project.url %}<p><a href="{{ project.url | relative_url }}">Open project page →</a></p>{% endif %}
+    </article>
+  {% endfor %}
+  </div>
 
+  <h2>Evidence standard</h2>
+  <p>A project page should become a polished research page only after the underlying work supports it. The minimum evidence gate is: functioning baseline, deterministic evaluation, quantitative results, a defensible extension or robustness study, failure analysis, reproducibility metadata, and an explanation I can defend orally.</p>
+</div>
