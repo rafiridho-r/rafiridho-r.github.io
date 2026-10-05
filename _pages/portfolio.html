@@ -1,32 +1,109 @@
 ---
-layout: archive
+layout: research-index
 title: "Research"
 permalink: /portfolio/
-author_profile: true
+author_profile: false
 ---
 
 {% assign rp = site.data.research_portfolio %}
-<div class="research-index">
-  <div class="research-index__intro">
-    <p><strong>{{ rp.research_identity }}</strong></p>
-    <p>{{ rp.programme_note }}</p>
+
+<section class="research-index-hero">
+  <div class="research-index-hero__kicker">Independent Research Programme</div>
+  <h1>{{ rp.research_identity }}</h1>
+  <p class="research-index-hero__lead">{{ rp.programme_note }}</p>
+
+  <div class="research-index-hero__meta">
+    <span>Computer Vision</span>
+    <span>Robotics Perception</span>
+    <span>3D Vision</span>
+    <span>Robustness & Evaluation</span>
+  </div>
+</section>
+
+<section class="research-index-section" aria-labelledby="programme-title">
+  <div class="research-section-heading">
+    <div>
+      <span class="research-section-heading__eyebrow">Programme structure</span>
+      <h2 id="programme-title">One cumulative research trajectory</h2>
+    </div>
+    <p>Each project develops a capability required by the next. The sequence is intentional: tracking and optimisation → ego-motion → learned 3D perception → robust 3D multi-object tracking.</p>
   </div>
 
   {% include research/progression.html %}
+</section>
 
-  <div class="research-project-card-grid">
+<section class="research-index-section" aria-labelledby="projects-title">
+  <div class="research-section-heading">
+    <div>
+      <span class="research-section-heading__eyebrow">Projects</span>
+      <h2 id="projects-title">Research portfolio</h2>
+    </div>
+    <p>Project pages are released only when the underlying work has reproducible evidence. Planned work is labelled explicitly rather than presented as completed research.</p>
+  </div>
+
+  <div class="research-project-card-grid research-project-card-grid--index">
   {% for project in rp.projects %}
-    <article class="research-project-card">
-      <div class="research-project-card__code">{{ project.code }} · {{ project.capability }}</div>
+    <article class="research-project-card {% if project.code == 'P4' %}research-project-card--flagship{% endif %}">
+      <div class="research-project-card__topline">
+        <span class="research-project-card__code">{{ project.code }}</span>
+        <span class="research-status research-status--{{ project.status_class | default: 'planned' }}">{{ project.status }}</span>
+      </div>
+
+      <div class="research-project-card__capability">{{ project.capability }}</div>
       <h3>{{ project.title }}</h3>
-      <p class="research-project-card__question">{{ project.question }}</p>
-      <p><strong>Status:</strong> {{ project.status }}</p>
-      <p><strong>What it enables next:</strong> {{ project.next }}</p>
-      {% if project.url %}<p><a href="{{ project.url | relative_url }}">Open project page →</a></p>{% endif %}
+
+      <div class="research-project-card__block">
+        <span class="research-project-card__label">Research question</span>
+        <p>{{ project.question }}</p>
+      </div>
+
+      <div class="research-project-card__block">
+        <span class="research-project-card__label">Capability carried forward</span>
+        <p>{{ project.next }}</p>
+      </div>
+
+      {% if project.url %}
+        <a class="research-project-card__link" href="{{ project.url | relative_url }}">Open project page <span aria-hidden="true">→</span></a>
+      {% else %}
+        <span class="research-project-card__pending">Project page activates after evidence gate</span>
+      {% endif %}
     </article>
   {% endfor %}
   </div>
+</section>
 
-  <h2>Evidence standard</h2>
-  <p>A project page should become a polished research page only after the underlying work supports it. The minimum evidence gate is: functioning baseline, deterministic evaluation, quantitative results, a defensible extension or robustness study, failure analysis, reproducibility metadata, and an explanation I can defend orally.</p>
-</div>
+<section class="research-index-section research-evidence-section" aria-labelledby="evidence-title">
+  <div class="research-section-heading">
+    <div>
+      <span class="research-section-heading__eyebrow">Evidence standard</span>
+      <h2 id="evidence-title">What qualifies as a portfolio research project</h2>
+    </div>
+    <p>The website is an evidence layer, not a substitute for research. A project is promoted only after its implementation, experiments, and limitations can be defended technically.</p>
+  </div>
+
+  <div class="research-evidence-grid">
+    <article>
+      <span>01</span>
+      <h3>Algorithmic ownership</h3>
+      <p>Core logic, derivations, design decisions, and tests are attributable and explainable—not merely assembled from an existing repository.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>Controlled evaluation</h3>
+      <p>Fixed protocols, quantitative metrics, robustness experiments, ablations where justified, and explicit failure analysis.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Reproducibility</h3>
+      <p>Frozen configs, code commit, environment, dataset split, experiment identifiers, and result provenance accompany public claims.</p>
+    </article>
+  </div>
+</section>
+
+<section class="research-index-footer">
+  <p><strong>Current state:</strong> the four project pages are intentionally dormant while the corresponding research is being completed. Their publication templates and interactive evidence infrastructure already exist in the repository.</p>
+  <div>
+    <a class="btn btn--primary" href="/cv/">Academic CV</a>
+    <a class="btn" href="https://github.com/rafiridho-r">GitHub</a>
+  </div>
+</section>
