@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Persistent object reasoning when both detections and the moving observer are imperfect.">
+<title>P4 — Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty</title>
+<link rel="stylesheet" href="../assets/project.css">
+</head>
+<body>
+<nav class="project-nav"><div class="project-nav__inner">
+<a class="project-nav__home" href="../../portfolio/">← Rafi Ridho Ramadhan</a>
+<a href="#overview">Overview</a><a href="#method">Method</a><a href="#evaluation">Evaluation</a><a href="#status">Status</a>
+</div></nav>
+
+<main class="project-shell">
+<header class="project-hero">
+<div class="project-status">Work in progress · P4</div>
+<h1>Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty</h1>
+<p class="project-subtitle">Persistent object reasoning when both detections and the moving observer are imperfect.</p>
+<p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
+<p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
+<div class="project-actions"><a href="../../portfolio/">Research index</a><a href="https://github.com/rafiridho-r">GitHub</a></div>
+</header>
+
+<div class="project-tldr"><strong>TL;DR.</strong> Integrate 3D detections, ego-motion compensation, state prediction, assignment, and track lifecycle management, then stress-test tracking under joint detection and pose uncertainty.</div>
+
+<section class="project-section" id="overview">
+<h2>Overview</h2>
+<p class="project-question">How robust is persistent 3D object tracking when both detections and the observer's own motion are uncertain?</p>
+<p>This flagship project synthesises the capabilities built in P1–P3. It uses cached detections so that tracker experiments remain repeatable and separates detection error, ego-motion error, association logic, and lifecycle behaviour.</p>
+</section>
+
+<section class="project-section" id="method">
+<h2>Method</h2>
+<p>The interactive walkthrough below is a conceptual representation of the planned pipeline. It explains the algorithmic structure; it is <strong>not</strong> an experimental result.</p>
+<div class="pipeline" data-pipeline>
+<button type="button" data-step="0" data-detail="Consume deterministic cached detections with a documented coordinate-frame contract."><span>01</span>3D detections</button>
+<button type="button" data-step="1" data-detail="Transform observations and track states consistently as the camera/vehicle moves."><span>02</span>Ego-motion</button>
+<button type="button" data-step="2" data-detail="Predict object state, gate candidate matches, and solve frame-to-frame assignment under uncertainty."><span>03</span>Association</button>
+<button type="button" data-step="3" data-detail="Handle birth, confirmation, missed observations, recovery, and deletion while preserving identity."><span>04</span>Track lifecycle</button>
+<div class="pipeline-detail" data-pipeline-detail style="grid-column:1/-1"></div>
+</div>
+
+<div class="concept-demo" data-concept-demo="mot">
+<div class="concept-demo__head"><strong>Conceptual diagnostic</strong><label>Detection noise <input type="range" name="det" min="0" max="100" value="20"></label>
+<label>Pose noise <input type="range" name="pose" min="0" max="100" value="15"></label></div>
+<canvas aria-label="Conceptual project visualization"></canvas>
+</div>
+<p class="concept-note">Illustrative only. This visualization will be replaced or complemented by frozen outputs from the actual implementation.</p>
+</section>
+
+<section class="project-section" id="evaluation">
+<h2>Evaluation plan</h2>
+<div class="eval-grid"><div><h3>Controlled uncertainty</h3><p>Use a fixed grid of detection and pose perturbations with deterministic seeds and units.</p></div>
+<div><h3>Tracking metrics</h3><p>Report identity/association and trajectory-related tracking metrics using a documented evaluator.</p></div>
+<div><h3>Ablation</h3><p>Isolate ego-motion compensation, uncertainty-aware association, and lifecycle choices.</p></div>
+<div><h3>Navigation relevance</h3><p>Diagnose failures that matter for persistent object reasoning under a moving observer.</p></div></div>
+</section>
+
+<section class="project-section" id="status">
+<h2>Current status</h2>
+<table class="status-table"><tbody><tr><th>Implementation</th><td>Flagship · planned</td></tr>
+<tr><th>Inputs</th><td>Cached 3D detections + pose source</td></tr>
+<tr><th>Primary evidence</th><td>Tracking metrics, uncertainty grid, camera/BEV failures</td></tr>
+<tr><th>Public code</th><td>Added after the baseline tracker and perturbation harness are verified</td></tr></tbody></table>
+<p><strong>No quantitative result is reported on this page yet.</strong> Metrics, ablations, failure cases, code, and reproducibility information will be added only after they are verified.</p>
+</section>
+
+<footer class="project-footer">
+<p>Main portfolio: <a href="../../">rafiridho-r.github.io</a>. Project-page presentation is inspired by academic project sites such as <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://dnwjddl.github.io/phaselock/">PhaseLock</a>; the implementation and project content here are original to this portfolio.</p>
+</footer>
+</main>
+<script src="../assets/project.js"></script>
+</body></html>
