@@ -3,72 +3,127 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Compute-aware 3D object detection with candidate-owned pillarisation and controlled sensor degradation.">
+<meta name="description" content="A compute-aware PointPillars reproduction and controlled point-cloud robustness study.">
 <title>P3 — Scaled PointPillars Reproduction + Point-Cloud Robustness Study</title>
 <link rel="stylesheet" href="../assets/project.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 </head>
 <body>
-<nav class="project-nav"><div class="project-nav__inner">
-<a class="project-nav__home" href="../../portfolio/">← Rafi Ridho Ramadhan</a>
-<a href="#overview">Overview</a><a href="#method">Method</a><a href="#evaluation">Evaluation</a><a href="#status">Status</a>
-</div></nav>
+<nav class="project-nav">
+  <div class="project-nav__inner">
+    <a class="project-nav__home" href="../../portfolio/">← Research</a>
+    <a href="#abstract">Abstract</a>
+    <a href="#method">Method</a>
+    <a href="#experiments">Experiments</a>
+    <a href="#results">Results</a>
+  </div>
+</nav>
 
-<main class="project-shell">
-<header class="project-hero">
-<div class="project-status">Work in progress · P3</div>
-<h1>Scaled PointPillars Reproduction + Point-Cloud Robustness Study</h1>
-<p class="project-subtitle">Compute-aware 3D object detection with candidate-owned pillarisation and controlled sensor degradation.</p>
-<p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
-<p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
-<div class="project-actions"><a href="../../portfolio/">Research index</a><a href="https://github.com/rafiridho-r">GitHub</a></div>
+<article class="project-page">
+<header class="project-header">
+  <h1>Scaled PointPillars Reproduction + Point-Cloud Robustness Study</h1>
+  <p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
+  <p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
+  <p class="project-state">Planned</p>
+
+  <div class="project-resources" aria-label="Project resources">
+    <a href="#abstract">Abstract</a>
+    <span aria-disabled="true" title="PDF will be added when available">PDF</span>
+    <span aria-disabled="true" title="Video will be added when available">Video</span>
+    <span aria-disabled="true" title="Code will be added when available">Code</span>
+    <span aria-disabled="true" title="Data/results will be added when available">Data</span>
+    <a href="../../portfolio/">Research index</a>
+  </div>
 </header>
 
-<div class="project-tldr"><strong>TL;DR.</strong> Reproduce a scaled PointPillars pipeline, verify clean performance, then quantify how sparsity, dropout, noise, and range degradation alter detection behaviour.</div>
+<section class="project-section" id="abstract">
+  <h2>Abstract</h2>
+  <p>This project reproduces a scaled PointPillars-style 3D detection pipeline with candidate-owned pillarisation and then measures how detection degrades as point-cloud observations become sparse, noisy, or range-limited. The scaling is explicit so that the study remains feasible under restricted compute while preserving the core representation and evaluation logic.</p>
+</section>
 
-<section class="project-section" id="overview">
-<h2>Overview</h2>
-<p class="project-question">How does pillar-based 3D detection degrade under controlled point-cloud corruption and reduced observation quality?</p>
-<p>The project prioritises understanding and robustness over leaderboard-scale training. Dataset size, backbone width, and training budget will be reduced to fit available compute while preserving the core pillar-based representation.</p>
+<section class="project-section" id="problem">
+  <h2>Problem</h2>
+  <p class="project-question"><strong>Research question.</strong> How does pillar-based 3D detection degrade under controlled point-cloud corruption and reduced observation quality?</p>
+  <p>The objective is not leaderboard-scale training. The completed project must demonstrate representation ownership, a verified clean baseline, controlled corruption protocols, compute profiling, and failure analysis.</p>
 </section>
 
 <section class="project-section" id="method">
-<h2>Method</h2>
-<p>The interactive walkthrough below is a conceptual representation of the planned pipeline. It explains the algorithmic structure; it is <strong>not</strong> an experimental result.</p>
-<div class="pipeline" data-pipeline>
-<button type="button" data-step="0" data-detail="Read calibrated point clouds and enforce explicit coordinate/range conventions."><span>01</span>Point cloud</button>
-<button type="button" data-step="1" data-detail="Implement point-to-pillar assignment and pillar feature construction as candidate-owned core logic."><span>02</span>Pillarisation</button>
-<button type="button" data-step="2" data-detail="Scatter pillar features into a pseudo-image and train a scaled detector head/backbone."><span>03</span>3D detector</button>
-<button type="button" data-step="3" data-detail="Apply controlled point dropout, sparsity, noise, and range degradation while holding the model fixed."><span>04</span>Corruption study</button>
-<div class="pipeline-detail" data-pipeline-detail style="grid-column:1/-1"></div>
-</div>
+  <h2>Method</h2>
+  <ol class="method-list">
+    <li><strong>Calibrated point cloud.</strong>Load point clouds with explicit coordinate axes, spatial range, and preprocessing rules.</li>
+<li><strong>Pillarisation.</strong>Assign points to pillars and construct pillar features with deterministic tests for indexing and aggregation.</li>
+<li><strong>Pseudo-image detector.</strong>Scatter pillar features into a pseudo-image and train a scaled backbone/detection head.</li>
+<li><strong>Robustness protocol.</strong>Freeze the detector and vary controlled dropout, sparsity, noise, and range conditions.</li>
+  </ol>
 
-<div class="concept-demo" data-concept-demo="pillars">
-<div class="concept-demo__head"><strong>Conceptual diagnostic</strong><label>Illustrative point dropout <input type="range" name="dropout" min="0" max="100" value="25"></label></div>
-<canvas aria-label="Conceptual project visualization"></canvas>
-</div>
-<p class="concept-note">Illustrative only. This visualization will be replaced or complemented by frozen outputs from the actual implementation.</p>
+  <!--
+    VERIFIED EQUATIONS GO HERE.
+    MathJax is already loaded. Example syntax:
+    <div class="math-block">\[ E(\theta)=\sum_i \rho(r_i(\theta)) \]</div>
+    Do not publish an equation until the notation and derivation are frozen.
+  -->
+
+  <figure class="project-figure" data-concept-demo="pillars">
+    <div class="project-figure__controls">
+      <label>Illustrative point dropout <input type="range" name="dropout" min="0" max="100" value="25"></label>
+    </div>
+    <canvas aria-label="Conceptual point-cloud dropout visualisation"></canvas>
+    <figcaption>
+      Conceptual diagnostic only; this is not an experimental result. It will be replaced or complemented by outputs from the verified implementation.
+    </figcaption>
+  </figure>
 </section>
 
-<section class="project-section" id="evaluation">
-<h2>Evaluation plan</h2>
-<div class="eval-grid"><div><h3>Clean baseline</h3><p>Establish a reproducible scaled baseline before any robustness claim.</p></div>
-<div><h3>Severity curves</h3><p>Report detection degradation as corruption severity increases, not just one corrupted operating point.</p></div>
-<div><h3>Representation diagnosis</h3><p>Inspect whether failure is driven by missing pillars, distant objects, orientation, or sparse occupancy.</p></div>
-<div><h3>Compute profile</h3><p>Report training/inference memory and latency appropriate to the scaled setup.</p></div></div>
+<section class="project-section" id="experiments">
+  <h2>Experiments</h2>
+  <table class="project-table">
+    <tbody>
+      <tr><th>Dataset</th><td>Scaled KITTI-style 3D detection setup with documented split and classes.</td></tr>
+<tr><th>Clean baseline</th><td>Establish reproducible performance before applying corruption.</td></tr>
+<tr><th>Robustness</th><td>Severity curves for point dropout/sparsity/noise/range degradation.</td></tr>
+<tr><th>Outputs</th><td>3D detection metrics, severity curves, BEV examples, compute profile, ablation, and code when verified.</td></tr>
+    </tbody>
+  </table>
 </section>
 
-<section class="project-section" id="status">
-<h2>Current status</h2>
-<table class="status-table"><tbody><tr><th>Implementation</th><td>Planned</td></tr>
-<tr><th>Dataset</th><td>Scaled KITTI-style 3D detection setup</td></tr>
-<tr><th>Primary evidence</th><td>3D detection metrics, severity curves, BEV failure cases</td></tr>
-<tr><th>Public code</th><td>Added after baseline and evaluator are verified</td></tr></tbody></table>
-<p><strong>No quantitative result is reported on this page yet.</strong> Metrics, ablations, failure cases, code, and reproducibility information will be added only after they are verified.</p>
+<section class="project-section" id="results">
+  <h2>Results</h2>
+  <p class="project-note"><strong>No quantitative result is reported yet.</strong> This section will contain the primary table/plots only after the baseline, evaluator, and experiment protocol are frozen.</p>
+
+  <!--
+    REAL FIGURES / ANIMATIONS GO HERE.
+    Preferred pattern:
+    <figure class="project-media">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="...">
+        <source src="assets/result.webm" type="video/webm">
+        <source src="assets/result.mp4" type="video/mp4">
+      </video>
+      <figcaption>What the viewer should learn from this result.</figcaption>
+    </figure>
+  -->
+</section>
+
+<section class="project-section" id="failure-analysis">
+  <h2>Failure analysis</h2>
+  <p>The failure analysis will distinguish sensing degradation from representation/model limitations, with particular attention to distant objects, sparse occupancy, orientation, and occlusion-like point loss.</p>
+</section>
+
+<section class="project-section" id="reproducibility">
+  <h2>Reproducibility</h2>
+  <p>The final release will publish preprocessing bounds, pillar parameters, corruption seeds, checkpoint/config metadata, evaluator settings, environment, code commit, and compute measurements.</p>
 </section>
 
 <footer class="project-footer">
-<p>Main portfolio: <a href="../../">rafiridho-r.github.io</a>. Project-page presentation is inspired by academic project sites such as <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://dnwjddl.github.io/phaselock/">PhaseLock</a>; the implementation and project content here are original to this portfolio.</p>
+  <p>Project status is reported conservatively. Unverified metrics, novelty claims, and unavailable artefacts are not presented as completed work.</p>
 </footer>
-</main>
+</article>
+
 <script src="../assets/project.js"></script>
-</body></html>
+</body>
+</html>
