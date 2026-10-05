@@ -3,73 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Persistent object reasoning when both detections and the moving observer are imperfect.">
+<meta name="description" content="A flagship study of 3D multi-object tracking under joint detection and ego-motion uncertainty.">
 <title>P4 — Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty</title>
 <link rel="stylesheet" href="../assets/project.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 </head>
 <body>
-<nav class="project-nav"><div class="project-nav__inner">
-<a class="project-nav__home" href="../../portfolio/">← Rafi Ridho Ramadhan</a>
-<a href="#overview">Overview</a><a href="#method">Method</a><a href="#evaluation">Evaluation</a><a href="#status">Status</a>
-</div></nav>
+<nav class="project-nav">
+  <div class="project-nav__inner">
+    <a class="project-nav__home" href="../../portfolio/">← Research</a>
+    <a href="#abstract">Abstract</a>
+    <a href="#method">Method</a>
+    <a href="#experiments">Experiments</a>
+    <a href="#results">Results</a>
+  </div>
+</nav>
 
-<main class="project-shell">
-<header class="project-hero">
-<div class="project-status">Work in progress · P4</div>
-<h1>Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty</h1>
-<p class="project-subtitle">Persistent object reasoning when both detections and the moving observer are imperfect.</p>
-<p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
-<p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
-<div class="project-actions"><a href="../../portfolio/">Research index</a><a href="https://github.com/rafiridho-r">GitHub</a></div>
+<article class="project-page">
+<header class="project-header">
+  <h1>Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty</h1>
+  <p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
+  <p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
+  <p class="project-state">Planned · synthesis project</p>
+
+  <div class="project-resources" aria-label="Project resources">
+    <a href="#abstract">Abstract</a>
+    <span aria-disabled="true" title="PDF will be added when available">PDF</span>
+    <span aria-disabled="true" title="Video will be added when available">Video</span>
+    <span aria-disabled="true" title="Code will be added when available">Code</span>
+    <span aria-disabled="true" title="Data/results will be added when available">Data</span>
+    <a href="../../portfolio/">Research index</a>
+  </div>
 </header>
 
-<div class="project-tldr"><strong>TL;DR.</strong> Integrate 3D detections, ego-motion compensation, state prediction, assignment, and track lifecycle management, then stress-test tracking under joint detection and pose uncertainty.</div>
+<section class="project-section" id="abstract">
+  <h2>Abstract</h2>
+  <p>This flagship project studies persistent 3D object tracking when both detections and observer motion are imperfect. It integrates cached 3D detections, ego-motion compensation, state prediction, data association, and track lifecycle management, then evaluates how detection and pose perturbations interact to create identity and localisation failures.</p>
+</section>
 
-<section class="project-section" id="overview">
-<h2>Overview</h2>
-<p class="project-question">How robust is persistent 3D object tracking when both detections and the observer's own motion are uncertain?</p>
-<p>This flagship project synthesises the capabilities built in P1–P3. It uses cached detections so that tracker experiments remain repeatable and separates detection error, ego-motion error, association logic, and lifecycle behaviour.</p>
+<section class="project-section" id="problem">
+  <h2>Problem</h2>
+  <p class="project-question"><strong>Research question.</strong> How robust is persistent 3D object tracking when both detections and the observer's own motion are uncertain?</p>
+  <p>The tracker is designed around cached detections so that temporal experiments remain repeatable and separable from detector training. The completed study must isolate detection error, pose error, association logic, lifecycle behaviour, and their interactions.</p>
 </section>
 
 <section class="project-section" id="method">
-<h2>Method</h2>
-<p>The interactive walkthrough below is a conceptual representation of the planned pipeline. It explains the algorithmic structure; it is <strong>not</strong> an experimental result.</p>
-<div class="pipeline" data-pipeline>
-<button type="button" data-step="0" data-detail="Consume deterministic cached detections with a documented coordinate-frame contract."><span>01</span>3D detections</button>
-<button type="button" data-step="1" data-detail="Transform observations and track states consistently as the camera/vehicle moves."><span>02</span>Ego-motion</button>
-<button type="button" data-step="2" data-detail="Predict object state, gate candidate matches, and solve frame-to-frame assignment under uncertainty."><span>03</span>Association</button>
-<button type="button" data-step="3" data-detail="Handle birth, confirmation, missed observations, recovery, and deletion while preserving identity."><span>04</span>Track lifecycle</button>
-<div class="pipeline-detail" data-pipeline-detail style="grid-column:1/-1"></div>
-</div>
+  <h2>Method</h2>
+  <ol class="method-list">
+    <li><strong>Cached 3D detections.</strong>Consume deterministic detections through a documented coordinate-frame and timestamp contract.</li>
+<li><strong>Ego-motion compensation.</strong>Transform observations and track states consistently as the observer moves.</li>
+<li><strong>Prediction and association.</strong>Predict object state, gate candidate matches, and solve assignment with explicit uncertainty assumptions.</li>
+<li><strong>Track lifecycle.</strong>Handle initiation, confirmation, missed detections, recovery, and deletion while preserving identity.</li>
+  </ol>
 
-<div class="concept-demo" data-concept-demo="mot">
-<div class="concept-demo__head"><strong>Conceptual diagnostic</strong><label>Detection noise <input type="range" name="det" min="0" max="100" value="20"></label>
-<label>Pose noise <input type="range" name="pose" min="0" max="100" value="15"></label></div>
-<canvas aria-label="Conceptual project visualization"></canvas>
-</div>
-<p class="concept-note">Illustrative only. This visualization will be replaced or complemented by frozen outputs from the actual implementation.</p>
+  <!--
+    VERIFIED EQUATIONS GO HERE.
+    MathJax is already loaded. Example syntax:
+    <div class="math-block">\[ E(\theta)=\sum_i \rho(r_i(\theta)) \]</div>
+    Do not publish an equation until the notation and derivation are frozen.
+  -->
+
+  <figure class="project-figure" data-concept-demo="mot">
+    <div class="project-figure__controls">
+      <label>Detection perturbation <input type="range" name="det" min="0" max="100" value="20"></label>
+<label>Pose perturbation <input type="range" name="pose" min="0" max="100" value="15"></label>
+    </div>
+    <canvas aria-label="Conceptual 3D tracking under detection and pose perturbation"></canvas>
+    <figcaption>
+      Conceptual diagnostic only; this is not an experimental result. It will be replaced or complemented by outputs from the verified implementation.
+    </figcaption>
+  </figure>
 </section>
 
-<section class="project-section" id="evaluation">
-<h2>Evaluation plan</h2>
-<div class="eval-grid"><div><h3>Controlled uncertainty</h3><p>Use a fixed grid of detection and pose perturbations with deterministic seeds and units.</p></div>
-<div><h3>Tracking metrics</h3><p>Report identity/association and trajectory-related tracking metrics using a documented evaluator.</p></div>
-<div><h3>Ablation</h3><p>Isolate ego-motion compensation, uncertainty-aware association, and lifecycle choices.</p></div>
-<div><h3>Navigation relevance</h3><p>Diagnose failures that matter for persistent object reasoning under a moving observer.</p></div></div>
+<section class="project-section" id="experiments">
+  <h2>Experiments</h2>
+  <table class="project-table">
+    <tbody>
+      <tr><th>Inputs</th><td>Cached 3D detections plus a documented pose source.</td></tr>
+<tr><th>Perturbation protocol</th><td>Fixed detection-noise × pose-noise grid with deterministic seeds and units.</td></tr>
+<tr><th>Evaluation</th><td>Tracking/association metrics, ablations, camera/BEV sequence diagnostics, and CPU profiling.</td></tr>
+<tr><th>Outputs</th><td>Primary results, uncertainty grid, failure taxonomy, reproducibility package, report/preprint, and code when verified.</td></tr>
+    </tbody>
+  </table>
 </section>
 
-<section class="project-section" id="status">
-<h2>Current status</h2>
-<table class="status-table"><tbody><tr><th>Implementation</th><td>Flagship · planned</td></tr>
-<tr><th>Inputs</th><td>Cached 3D detections + pose source</td></tr>
-<tr><th>Primary evidence</th><td>Tracking metrics, uncertainty grid, camera/BEV failures</td></tr>
-<tr><th>Public code</th><td>Added after the baseline tracker and perturbation harness are verified</td></tr></tbody></table>
-<p><strong>No quantitative result is reported on this page yet.</strong> Metrics, ablations, failure cases, code, and reproducibility information will be added only after they are verified.</p>
+<section class="project-section" id="results">
+  <h2>Results</h2>
+  <p class="project-note"><strong>No quantitative result is reported yet.</strong> This section will contain the primary table/plots only after the baseline, evaluator, and experiment protocol are frozen.</p>
+
+  <!--
+    REAL FIGURES / ANIMATIONS GO HERE.
+    Preferred pattern:
+    <figure class="project-media">
+      <video autoplay muted loop playsinline controls preload="metadata" poster="...">
+        <source src="assets/result.webm" type="video/webm">
+        <source src="assets/result.mp4" type="video/mp4">
+      </video>
+      <figcaption>What the viewer should learn from this result.</figcaption>
+    </figure>
+  -->
+</section>
+
+<section class="project-section" id="failure-analysis">
+  <h2>Failure analysis</h2>
+  <p>The final page will trace representative identity/association failures back to detection error, ego-motion error, state prediction, gating/assignment, or lifecycle decisions. The taxonomy will be derived from observed failures.</p>
+</section>
+
+<section class="project-section" id="reproducibility">
+  <h2>Reproducibility</h2>
+  <p>The final release will include cached-input checksums, coordinate-transform tests, perturbation seeds, evaluator version/settings, experiment configuration, code commit, environment, and CPU/runtime measurements.</p>
 </section>
 
 <footer class="project-footer">
-<p>Main portfolio: <a href="../../">rafiridho-r.github.io</a>. Project-page presentation is inspired by academic project sites such as <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://dnwjddl.github.io/phaselock/">PhaseLock</a>; the implementation and project content here are original to this portfolio.</p>
+  <p>Project status is reported conservatively. Unverified metrics, novelty claims, and unavailable artefacts are not presented as completed work.</p>
 </footer>
-</main>
+</article>
+
 <script src="../assets/project.js"></script>
-</body></html>
+</body>
+</html>
