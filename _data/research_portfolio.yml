@@ -1,0 +1,43 @@
+# Public research-programme metadata.
+# Keep claims conservative. Do not change a project to "Completed", "Preprint",
+# "Submitted", or "Accepted" until that status is factually true.
+research_identity: "Robust Object-Centric 3D Perception for Visual Navigation"
+programme_note: "A cumulative independent research programme: tracking and optimisation → camera geometry and ego-motion → learned 3D perception → robust 3D multi-object tracking."
+
+projects:
+  - code: "P1"
+    short: "CACF"
+    title: "CACF Reproduction + Robust Context-Update Extension"
+    capability: "Tracking / Optimisation"
+    status: "Planned research page"
+    status_class: "planned"
+    url: null
+    question: "When does contextual information improve correlation-filter tracking, and when does context updating become brittle?"
+    next: "Build object-tracking and optimisation discipline before moving to camera motion."
+  - code: "P2"
+    short: "RGB-D VO"
+    title: "Robust RGB-D Visual Odometry in Dynamic Scenes"
+    capability: "Camera Geometry / Ego-Motion"
+    status: "Planned research page"
+    status_class: "planned"
+    url: null
+    question: "How robustly can camera motion be estimated when parts of the observed scene are independently moving?"
+    next: "Use reliable ego-motion reasoning as a bridge to object-centric 3D tracking."
+  - code: "P3"
+    short: "PointPillars"
+    title: "Scaled PointPillars Reproduction + Point-Cloud Robustness Study"
+    capability: "Learned 3D Perception"
+    status: "Planned research page"
+    status_class: "planned"
+    url: null
+    question: "How does pillar-based 3D detection degrade under controlled point-cloud corruption and reduced observation quality?"
+    next: "Turn frame-wise 3D detections into inputs for persistent object reasoning."
+  - code: "P4"
+    short: "3D MOT"
+    title: "Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty"
+    capability: "Robust 3D MOT / Visual Navigation"
+    status: "Flagship — planned research page"
+    status_class: "flagship"
+    url: null
+    question: "How robust is persistent 3D object tracking when both detections and the observer's own motion are uncertain?"
+    next: "Synthesis of tracking, ego-motion, learned 3D perception, state estimation, and uncertainty analysis."
