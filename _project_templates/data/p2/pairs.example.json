@@ -1,0 +1,1 @@
+{"items":[{"title":"TODO dynamic-scene sequence","note":"Compare pose/trajectory under identical input frames.","left":{"label":"Baseline VO","src":"/assets/research/p2/TODO-baseline.mp4","type":"video"},"right":{"label":"Robust VO","src":"/assets/research/p2/TODO-robust.mp4","type":"video"}}]}

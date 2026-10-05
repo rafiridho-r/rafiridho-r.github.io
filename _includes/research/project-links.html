@@ -1,0 +1,12 @@
+{% assign has_links = false %}
+{% if page.report_url or page.code_url or page.experiments_url or page.preprint_url or page.data_url or page.demo_url %}{% assign has_links = true %}{% endif %}
+{% if has_links %}
+<div class="research-actions" aria-label="Project resources">
+  {% if page.report_url %}<a class="btn btn--primary" href="{{ page.report_url }}">Technical report</a>{% endif %}
+  {% if page.preprint_url %}<a class="btn" href="{{ page.preprint_url }}">Preprint</a>{% endif %}
+  {% if page.code_url %}<a class="btn" href="{{ page.code_url }}">Code</a>{% endif %}
+  {% if page.data_url %}<a class="btn" href="{{ page.data_url }}">Results data</a>{% endif %}
+  {% if page.experiments_url %}<a class="btn" href="{{ page.experiments_url }}">Experiment log</a>{% endif %}
+  {% if page.demo_url %}<a class="btn" href="{{ page.demo_url }}">Interactive demo</a>{% endif %}
+</div>
+{% endif %}

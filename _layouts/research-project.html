@@ -1,0 +1,78 @@
+---
+layout: default
+---
+{% include base_path %}
+
+<main class="research-project" id="main-content">
+  <header class="research-hero">
+    <div class="research-hero__eyebrow">{{ page.project_code }} · {{ page.project_type | default: "Independent research project" }}</div>
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="research-hero__subtitle">{{ page.subtitle }}</p>{% endif %}
+
+    <div class="research-hero__authors">
+      <span>{{ page.author | default: site.author.name }}</span>
+      {% if page.affiliation_note %}<span>· {{ page.affiliation_note }}</span>{% endif %}
+    </div>
+
+    <div class="research-hero__meta">
+      <span class="research-status research-status--{{ page.status_class | default: 'planned' }}">{{ page.status | default: "Work in progress" }}</span>
+      {% if page.updated %}<span>Updated {{ page.updated }}</span>{% endif %}
+      {% if page.role %}<span>{{ page.role }}</span>{% endif %}
+    </div>
+
+    {% include research/project-links.html %}
+
+    {% if page.tldr %}
+    <div class="research-tldr">
+      <strong>TL;DR.</strong> {{ page.tldr }}
+      {% if page.key_stats and page.key_stats.size > 0 %}
+      <div class="research-tldr__stats">
+        {% for stat in page.key_stats %}
+        <span><strong>{{ stat.value }}</strong>{{ stat.label }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% include research/template-warning.html %}
+  {% include research/project-teaser.html %}
+
+  <nav class="research-local-nav" aria-label="Project page sections">
+    <a href="#walkthrough">Walkthrough</a>
+    <a href="#question">Question</a>
+    <a href="#method">Method</a>
+    <a href="#experiments">Experiments</a>
+    <a href="#results">Results</a>
+    <a href="#failures">Failures</a>
+    <a href="#reproducibility">Reproducibility</a>
+  </nav>
+
+  {% if page.research_question %}
+  <section class="research-question">
+    <span>Research question</span>
+    <p>{{ page.research_question }}</p>
+  </section>
+  {% endif %}
+
+  <article class="research-body">
+    {{ content }}
+  </article>
+
+  {% if page.citation %}
+  <section class="research-citation">
+    <h2>Citation</h2>
+    <pre><code data-citation-text>{{ page.citation }}</code></pre>
+    <button type="button" data-copy-citation>Copy citation</button>
+  </section>
+  {% endif %}
+
+  <section class="research-next">
+    <h2>Research programme</h2>
+    <p>{{ site.data.research_portfolio.programme_note }}</p>
+    {% include research/progression.html %}
+  </section>
+</main>
+
+<script src="{{ '/assets/js/research-project.js' | relative_url }}" defer></script>

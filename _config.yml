@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Rafi Ridho Ramadhan"
 title_separator          : "-"
 name                     : &name "Rafi Ridho Ramadhan"
-description              : "Electrical Engineering Graduate | Computer Vision & Robotics Perception | Robust Object-Centric 3D Perception for Visual Navigation"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : "Independent research portfolio in robust object-centric 3D perception for visual navigation, spanning tracking, visual ego-motion, 3D detection, and 3D multi-object tracking."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://rafiridho-r.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -192,6 +192,7 @@ exclude:
   - README
   - tmp
   - vendor
+  - _project_templates
 keep_files:
   - .git
   - .svn
