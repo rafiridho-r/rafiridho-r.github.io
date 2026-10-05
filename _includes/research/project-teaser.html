@@ -1,0 +1,12 @@
+{% if page.teaser_video or page.teaser_image %}
+<section class="research-teaser" aria-label="Project teaser">
+  {% if page.teaser_video %}
+  <video autoplay muted loop playsinline preload="metadata" {% if page.teaser_poster %}poster="{{ page.teaser_poster | relative_url }}"{% endif %}>
+    <source src="{{ page.teaser_video | relative_url }}" type="video/mp4">
+  </video>
+  {% elsif page.teaser_image %}
+  <img src="{{ page.teaser_image | relative_url }}" alt="{{ page.teaser_alt | default: page.title }}" loading="eager">
+  {% endif %}
+  {% if page.teaser_caption %}<p>{{ page.teaser_caption }}</p>{% endif %}
+</section>
+{% endif %}
