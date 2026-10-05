@@ -7,103 +7,55 @@ author_profile: false
 
 {% assign rp = site.data.research_portfolio %}
 
-<section class="research-index-hero">
-  <div class="research-index-hero__kicker">Independent Research Programme</div>
-  <h1>{{ rp.research_identity }}</h1>
-  <p class="research-index-hero__lead">{{ rp.programme_note }}</p>
+<header class="academic-research-header">
+  <h1>Research</h1>
+  <p>
+    My research interests are in computer vision and visual-centric robotics perception, particularly
+    <strong>{{ rp.research_identity | downcase }}</strong>.
+  </p>
+  <p class="academic-research-header__note">
+    Current programme: tracking and optimisation → visual ego-motion → learned 3D perception → robust 3D multi-object tracking.
+  </p>
+</header>
 
-  <div class="research-index-hero__meta">
-    <span>Computer Vision</span>
-    <span>Robotics Perception</span>
-    <span>3D Vision</span>
-    <span>Robustness & Evaluation</span>
-  </div>
-</section>
+<section class="academic-research-section">
+  <h2>Selected projects</h2>
 
-<section class="research-index-section" aria-labelledby="programme-title">
-  <div class="research-section-heading">
-    <div>
-      <span class="research-section-heading__eyebrow">Programme structure</span>
-      <h2 id="programme-title">One cumulative research trajectory</h2>
-    </div>
-    <p>Each project develops a capability required by the next. The sequence is intentional: tracking and optimisation → ego-motion → learned 3D perception → robust 3D multi-object tracking.</p>
-  </div>
-
-  {% include research/progression.html %}
-</section>
-
-<section class="research-index-section" aria-labelledby="projects-title">
-  <div class="research-section-heading">
-    <div>
-      <span class="research-section-heading__eyebrow">Projects</span>
-      <h2 id="projects-title">Research portfolio</h2>
-    </div>
-    <p>Project pages are released only when the underlying work has reproducible evidence. Planned work is labelled explicitly rather than presented as completed research.</p>
-  </div>
-
-  <div class="research-project-card-grid research-project-card-grid--index">
+  <div class="academic-work-list">
   {% for project in rp.projects %}
-    <article class="research-project-card {% if project.code == 'P4' %}research-project-card--flagship{% endif %}">
-      <div class="research-project-card__topline">
-        <span class="research-project-card__code">{{ project.code }}</span>
-        <span class="research-status research-status--{{ project.status_class | default: 'planned' }}">{{ project.status }}</span>
+    <article class="academic-work-item">
+      <div class="academic-work-item__meta">
+        {{ project.code }} · {{ project.capability }} · {{ project.status }}
       </div>
-
-      <div class="research-project-card__capability">{{ project.capability }}</div>
       <h3>{{ project.title }}</h3>
-
-      <div class="research-project-card__block">
-        <span class="research-project-card__label">Research question</span>
-        <p>{{ project.question }}</p>
-      </div>
-
-      <div class="research-project-card__block">
-        <span class="research-project-card__label">Capability carried forward</span>
-        <p>{{ project.next }}</p>
-      </div>
+      <p>{{ project.question }}</p>
 
       {% if project.url %}
-        <a class="research-project-card__link" href="{{ project.url | relative_url }}">Open project page <span aria-hidden="true">→</span></a>
-      {% else %}
-        <span class="research-project-card__pending">Project page activates after evidence gate</span>
+        <p class="academic-work-item__links">
+          <a href="{{ project.url | relative_url }}">Project page</a>
+        </p>
       {% endif %}
     </article>
   {% endfor %}
   </div>
 </section>
 
-<section class="research-index-section research-evidence-section" aria-labelledby="evidence-title">
-  <div class="research-section-heading">
-    <div>
-      <span class="research-section-heading__eyebrow">Evidence standard</span>
-      <h2 id="evidence-title">What qualifies as a portfolio research project</h2>
-    </div>
-    <p>The website is an evidence layer, not a substitute for research. A project is promoted only after its implementation, experiments, and limitations can be defended technically.</p>
-  </div>
-
-  <div class="research-evidence-grid">
-    <article>
-      <span>01</span>
-      <h3>Algorithmic ownership</h3>
-      <p>Core logic, derivations, design decisions, and tests are attributable and explainable—not merely assembled from an existing repository.</p>
-    </article>
-    <article>
-      <span>02</span>
-      <h3>Controlled evaluation</h3>
-      <p>Fixed protocols, quantitative metrics, robustness experiments, ablations where justified, and explicit failure analysis.</p>
-    </article>
-    <article>
-      <span>03</span>
-      <h3>Reproducibility</h3>
-      <p>Frozen configs, code commit, environment, dataset split, experiment identifiers, and result provenance accompany public claims.</p>
-    </article>
-  </div>
+<section class="academic-research-section">
+  <h2>Research approach</h2>
+  <p>
+    I use reproductions to establish technical ownership before extending a method or studying its failure modes.
+    Public project pages are intended to document the method, experimental protocol, quantitative results,
+    ablations where appropriate, failure analysis, and reproducibility information.
+  </p>
 </section>
 
-<section class="research-index-footer">
-  <p><strong>Current state:</strong> the four project pages are intentionally dormant while the corresponding research is being completed. Their publication templates and interactive evidence infrastructure already exist in the repository.</p>
-  <div>
-    <a class="btn btn--primary" href="/cv/">Academic CV</a>
-    <a class="btn" href="https://github.com/rafiridho-r">GitHub</a>
-  </div>
+<section class="academic-research-section academic-research-section--links">
+  <h2>Links</h2>
+  <p>
+    <a href="/cv/">Academic CV</a>
+    <span>·</span>
+    <a href="https://github.com/rafiridho-r">GitHub</a>
+    <span>·</span>
+    <a href="https://www.linkedin.com/in/rafi-ridho-ramadhan-/">LinkedIn</a>
+  </p>
 </section>
