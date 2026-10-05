@@ -10,7 +10,6 @@ redirect_from:
 
 <div class="academic-home-intro">
   <p class="academic-home-intro__meta">Electrical Engineering · Universitas Lampung</p>
-  <h1>Rafi Ridho Ramadhan</h1>
   <p class="academic-home-intro__lead">
     I am an Electrical Engineering graduate from Universitas Lampung, Indonesia. I enjoy building technical systems, learning deeply, and turning ideas into carefully documented implementations.
   </p>
