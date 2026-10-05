@@ -10,30 +10,30 @@ author_profile: true
 
 <p class="research-intro">
   Selected independent projects in computer vision, robotics perception, and 3D vision.
-  Project pages document the problem, implementation scope, evaluation plan, and—once available—verified experimental results.
 </p>
 
 <div class="research-list">
 {% for project in site.data.research.projects %}
-  <article class="research-card">
-    <a class="research-card__media" href="{{ project.webpage | relative_url }}" aria-label="Open {{ project.title }}">
-      <img src="{{ project.image | relative_url }}" alt="{{ project.short }} project thumbnail">
+  <article class="research-item">
+    <a class="research-item__figure" href="{{ project.webpage | relative_url }}" aria-label="Open {{ project.title }}">
+      <img src="{{ project.image | relative_url }}" alt="Method thumbnail for {{ project.title }}">
     </a>
 
-    <div class="research-card__body">
-      <h2 class="research-card__title">{{ project.title }}</h2>
-      <p class="research-card__authors"><strong><u>{{ project.author }}</u></strong></p>
-      <p class="research-card__status">{{ project.status }}</p>
+    <div class="research-item__content">
+      <h2 class="research-item__title">
+        <a href="{{ project.webpage | relative_url }}">{{ project.title }}</a>
+      </h2>
+      <p class="research-item__authors"><strong>{{ project.author }}</strong></p>
+      <p class="research-item__field">{{ project.field }}</p>
+      <p class="research-item__status"><strong>{{ project.status }}</strong> · {{ project.venue }}</p>
 
-      <div class="research-card__tags" aria-label="Research areas">
-        <span>{{ project.field }}</span>
-        <span>{{ project.subfield }}</span>
-      </div>
-
-      <div class="research-card__links">
-        {% if project.pdf %}<a href="{{ project.pdf | relative_url }}">PDF</a>{% endif %}
-        {% if project.webpage %}<a href="{{ project.webpage | relative_url }}">Webpage</a>{% endif %}
-        {% if project.code %}<a href="{{ project.code }}">Code</a>{% endif %}
+      <div class="research-item__links" aria-label="Project resources">
+        <a href="{{ project.webpage | relative_url }}#abstract">Abstract</a>
+        {% if project.pdf %}<a href="{{ project.pdf | relative_url }}">PDF</a>{% else %}<span aria-disabled="true" title="PDF will be added when available">PDF</span>{% endif %}
+        {% if project.video %}<a href="{{ project.video | relative_url }}">Video</a>{% else %}<span aria-disabled="true" title="Video will be added when available">Video</span>{% endif %}
+        <a href="{{ project.webpage | relative_url }}">Webpage</a>
+        {% if project.code %}<a href="{{ project.code }}">Code</a>{% else %}<span aria-disabled="true" title="Code will be added when available">Code</span>{% endif %}
+        {% if project.data %}<a href="{{ project.data }}">Data</a>{% else %}<span aria-disabled="true" title="Data/results will be added when available">Data</span>{% endif %}
       </div>
     </div>
   </article>
