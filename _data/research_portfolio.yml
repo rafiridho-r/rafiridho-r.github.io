@@ -9,7 +9,7 @@ projects:
     short: "CACF"
     title: "CACF Reproduction + Robust Context-Update Extension"
     capability: "Tracking / Optimisation"
-    status: "Planned research page"
+    status: "Planned"
     status_class: "planned"
     url: null
     question: "When does contextual information improve correlation-filter tracking, and when does context updating become brittle?"
@@ -18,7 +18,7 @@ projects:
     short: "RGB-D VO"
     title: "Robust RGB-D Visual Odometry in Dynamic Scenes"
     capability: "Camera Geometry / Ego-Motion"
-    status: "Planned research page"
+    status: "Planned"
     status_class: "planned"
     url: null
     question: "How robustly can camera motion be estimated when parts of the observed scene are independently moving?"
@@ -27,7 +27,7 @@ projects:
     short: "PointPillars"
     title: "Scaled PointPillars Reproduction + Point-Cloud Robustness Study"
     capability: "Learned 3D Perception"
-    status: "Planned research page"
+    status: "Planned"
     status_class: "planned"
     url: null
     question: "How does pillar-based 3D detection degrade under controlled point-cloud corruption and reduced observation quality?"
@@ -36,7 +36,7 @@ projects:
     short: "3D MOT"
     title: "Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty"
     capability: "Robust 3D MOT / Visual Navigation"
-    status: "Flagship — planned research page"
+    status: "Flagship · Planned"
     status_class: "flagship"
     url: null
     question: "How robust is persistent 3D object tracking when both detections and the observer's own motion are uncertain?"
