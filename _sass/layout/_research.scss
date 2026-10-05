@@ -373,3 +373,85 @@
   .academic-research-header{padding-top:2rem}
   .academic-work-item{padding:1rem 0 1.15rem}
 }
+
+
+/* v4.1 final public-surface restraint */
+.academic-home-intro,
+.academic-research-header,
+.academic-research-section,
+.academic-work-list,
+.academic-work-item{
+  background:transparent;
+  box-shadow:none;
+  border-radius:0;
+}
+.academic-home-intro{
+  max-width:720px;
+}
+.academic-home-intro__meta{
+  font-size:.86rem;
+  letter-spacing:.01em;
+}
+.academic-home-intro h1{
+  font-size:clamp(1.95rem,3.6vw,3rem);
+  font-weight:700;
+}
+.academic-home-intro__lead{
+  font-size:1.04rem;
+}
+.academic-research-header{
+  max-width:760px;
+  padding-top:2.6rem;
+}
+.academic-research-header h1{
+  font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:700;
+}
+.academic-research-header__note{
+  font-size:.92rem;
+}
+.academic-work-item__meta{
+  font-size:.8rem;
+}
+.academic-work-item h3{
+  font-weight:650;
+}
+.academic-work-item a,
+.academic-home-intro a,
+.academic-research-section a{
+  text-underline-offset:.16em;
+}
+.academic-research-section--links{
+  border-top:1px solid var(--research-border);
+}
+
+/* Old dashboard/index components are not part of the public v4 pages. */
+.research-index-hero,
+.research-index-section,
+.research-index-footer,
+.research-project-card-grid--index,
+.research-evidence-grid{
+  box-shadow:none;
+}
+
+/* Keep project-page chrome restrained as well. */
+.research-status{
+  border-radius:2px;
+  padding:.18rem .45rem;
+  background:transparent;
+}
+.research-tldr,
+.research-walkthrough,
+.research-demo,
+.research-frame-scrubber,
+.research-pair-card,
+.research-gallery-card,
+.research-teaser video,
+.research-teaser img{
+  border-radius:3px;
+  box-shadow:none;
+}
+.research-question,
+.research-mechanism{
+  background:transparent;
+}
