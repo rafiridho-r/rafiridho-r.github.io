@@ -1,0 +1,1 @@
+{"project":"P3","experiment_id":"RUN_TODO","code_commit":"TODO","dataset":"KITTI / TODO","synthetic":true,"items":[{"title":"Point-cloud corruption case","image":"/assets/research/p3/example.png","note":"Replace with verified GT/prediction comparison."}]}
