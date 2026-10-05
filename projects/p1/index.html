@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Correlation-filter tracking as a foundation for disciplined optimisation, temporal reasoning, and failure analysis.">
+<title>P1 — CACF Reproduction + Robust Context-Update Extension</title>
+<link rel="stylesheet" href="../assets/project.css">
+</head>
+<body>
+<nav class="project-nav"><div class="project-nav__inner">
+<a class="project-nav__home" href="../../portfolio/">← Rafi Ridho Ramadhan</a>
+<a href="#overview">Overview</a><a href="#method">Method</a><a href="#evaluation">Evaluation</a><a href="#status">Status</a>
+</div></nav>
+
+<main class="project-shell">
+<header class="project-hero">
+<div class="project-status">Work in progress · P1</div>
+<h1>CACF Reproduction + Robust Context-Update Extension</h1>
+<p class="project-subtitle">Correlation-filter tracking as a foundation for disciplined optimisation, temporal reasoning, and failure analysis.</p>
+<p class="project-authors"><strong>Rafi Ridho Ramadhan</strong></p>
+<p class="project-affiliation">Independent Research Portfolio · Computer Vision / Robotics Perception</p>
+<div class="project-actions"><a href="../../portfolio/">Research index</a><a href="https://github.com/rafiridho-r">GitHub</a></div>
+</header>
+
+<div class="project-tldr"><strong>TL;DR.</strong> Reproduce the CACF tracking mechanism from first principles, then test whether a more conservative context-update rule improves robustness under distractors and appearance change.</div>
+
+<section class="project-section" id="overview">
+<h2>Overview</h2>
+<p class="project-question">When does contextual information improve correlation-filter tracking, and when does context updating become brittle?</p>
+<p>The project is intentionally narrow: a candidate-owned reproduction, a controlled context-update extension, and a failure-oriented evaluation. The goal is not to build a new end-to-end tracker stack.</p>
+</section>
+
+<section class="project-section" id="method">
+<h2>Method</h2>
+<p>The interactive walkthrough below is a conceptual representation of the planned pipeline. It explains the algorithmic structure; it is <strong>not</strong> an experimental result.</p>
+<div class="pipeline" data-pipeline>
+<button type="button" data-step="0" data-detail="Start from the current frame, target state, and a clearly defined search region."><span>01</span>Frame & target</button>
+<button type="button" data-step="1" data-detail="Compute the target response and inspect where contextual information suppresses or amplifies competing peaks."><span>02</span>Correlation response</button>
+<button type="button" data-step="2" data-detail="Decide whether the new observation is reliable enough to update target/context models."><span>03</span>Update decision</button>
+<button type="button" data-step="3" data-detail="Propagate the target state and record success, drift, distractor capture, or recovery behaviour."><span>04</span>Track & diagnose</button>
+<div class="pipeline-detail" data-pipeline-detail style="grid-column:1/-1"></div>
+</div>
+
+<div class="concept-demo" data-concept-demo="tracking">
+<div class="concept-demo__head"><strong>Conceptual diagnostic</strong><label>Illustrative ambiguity <input type="range" name="ambiguity" min="0" max="100" value="35"></label></div>
+<canvas aria-label="Conceptual project visualization"></canvas>
+</div>
+<p class="concept-note">Illustrative only. This visualization will be replaced or complemented by frozen outputs from the actual implementation.</p>
+</section>
+
+<section class="project-section" id="evaluation">
+<h2>Evaluation plan</h2>
+<div class="eval-grid"><div><h3>Reproduction fidelity</h3><p>Verify the implementation on a controlled subset using standard tracking metrics and deterministic evaluation.</p></div>
+<div><h3>Robustness</h3><p>Stress distractors, occlusion, appearance change, and context-update failure modes with fixed protocols.</p></div>
+<div><h3>Ablation</h3><p>Isolate the effect of the proposed context-update rule rather than changing multiple components at once.</p></div>
+<div><h3>Efficiency</h3><p>Report CPU/runtime behaviour and keep the implementation feasible on limited hardware.</p></div></div>
+</section>
+
+<section class="project-section" id="status">
+<h2>Current status</h2>
+<table class="status-table"><tbody><tr><th>Implementation</th><td>Planned / in development</td></tr>
+<tr><th>Dataset</th><td>Scaled public tracking sequences</td></tr>
+<tr><th>Primary evidence</th><td>Tracking metrics, response maps, failure cases</td></tr>
+<tr><th>Public code</th><td>Added after a clean, defensible baseline exists</td></tr></tbody></table>
+<p><strong>No quantitative result is reported on this page yet.</strong> Metrics, ablations, failure cases, code, and reproducibility information will be added only after they are verified.</p>
+</section>
+
+<footer class="project-footer">
+<p>Main portfolio: <a href="../../">rafiridho-r.github.io</a>. Project-page presentation is inspired by academic project sites such as <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://dnwjddl.github.io/phaselock/">PhaseLock</a>; the implementation and project content here are original to this portfolio.</p>
+</footer>
+</main>
+<script src="../assets/project.js"></script>
+</body></html>
