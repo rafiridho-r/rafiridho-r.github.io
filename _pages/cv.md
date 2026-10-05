@@ -26,10 +26,10 @@ Research interests
 
 Research projects
 ======
-{% for post in site.portfolio %}
-* **[{{ post.title }}]({{ post.url }})**
-  * {{ post.excerpt | strip_html }}
-{% endfor %}
+* **P1 — CACF Reproduction + Robust Context-Update Extension**
+* **P2 — Robust RGB-D Visual Odometry in Dynamic Scenes**
+* **P3 — Scaled PointPillars Reproduction + Point-Cloud Robustness Study**
+* **P4 — Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty**
 
 Experience
 ======
@@ -37,7 +37,7 @@ Experience
   * Hardware integration, flight-system preparation, and system testing for a national student UAV competition.
 
 * **Undergraduate Research, Universitas Lampung**
-  * Spatio-temporal deep learning, benchmarking, robustness analysis, cross-domain evaluation, and quantitative model evaluation.
+  * Spatio-temporal deep learning, temporal attention, controlled benchmarking, robustness analysis, cross-domain evaluation, and quantitative model evaluation.
 
 Skills
 ======

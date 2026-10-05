@@ -1,0 +1,45 @@
+projects:
+  - code: "P1"
+    short: "CACF"
+    title: "CACF Reproduction + Robust Context-Update Extension"
+    author: "Rafi Ridho Ramadhan"
+    status: "Independent Research Project · Planned"
+    field: "Computer Vision"
+    subfield: "Visual Tracking"
+    image: "/images/research/p1-cacf.svg"
+    webpage: "/projects/p1/"
+    pdf:
+    code:
+  - code: "P2"
+    short: "RGB-D VO"
+    title: "Robust RGB-D Visual Odometry in Dynamic Scenes"
+    author: "Rafi Ridho Ramadhan"
+    status: "Independent Research Project · Planned"
+    field: "Robotics Perception"
+    subfield: "Visual Ego-Motion"
+    image: "/images/research/p2-rgbd-vo.svg"
+    webpage: "/projects/p2/"
+    pdf:
+    code:
+  - code: "P3"
+    short: "PointPillars"
+    title: "Scaled PointPillars Reproduction + Point-Cloud Robustness Study"
+    author: "Rafi Ridho Ramadhan"
+    status: "Independent Research Project · Planned"
+    field: "3D Computer Vision"
+    subfield: "3D Object Detection"
+    image: "/images/research/p3-pointpillars.svg"
+    webpage: "/projects/p3/"
+    pdf:
+    code:
+  - code: "P4"
+    short: "3D MOT"
+    title: "Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty"
+    author: "Rafi Ridho Ramadhan"
+    status: "Flagship Research Project · Planned"
+    field: "3D Computer Vision"
+    subfield: "3D Multi-Object Tracking"
+    image: "/images/research/p4-3d-mot.svg"
+    webpage: "/projects/p4/"
+    pdf:
+    code:

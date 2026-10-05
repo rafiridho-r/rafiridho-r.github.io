@@ -1,4 +1,6 @@
-# The following is the order of the links in the header of the website.
+# The following is the order of links in the header.
+# The theme and navigation behaviour are kept from Academic Pages.
+
 main:
   - title: "Research"
     url: /portfolio/
@@ -6,6 +8,6 @@ main:
   - title: "CV"
     url: /cv/
 
-  # Enable when real content exists.
+  # Enable only when real content exists.
   # - title: "Publications"
   #   url: /publications/

@@ -12,7 +12,7 @@ site_theme               : "default" # The available themes options are "default
 title                    : "Rafi Ridho Ramadhan"
 title_separator          : "-"
 name                     : &name "Rafi Ridho Ramadhan"
-description              : "Rafi Ridho Ramadhan — Electrical Engineering graduate from Universitas Lampung."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Rafi Ridho Ramadhan — Electrical Engineering graduate, Computer Vision and Robotics Perception."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : "https://rafiridho-r.github.io" # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -25,23 +25,23 @@ author:
   # Biographic information
   avatar           : "profile.jpeg"
   name             : "Rafi Ridho Ramadhan"
-  pronouns         : "he/him" # example: "she/her"  
-  bio              : "Electrical Engineering graduate from Universitas Lampung."
+  pronouns         :  
+  bio              : "Electrical Engineering graduate · Computer Vision & Robotics Perception"
   location         : "Lampung, Indonesia"
   employer         :
-  github           : "rafiridho-r"
-  
+  uri              : # URL
+  email            : 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : #"https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    :
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : #"https://orcid.org/yourorcidurl"
+  orcid            :
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           :
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -57,7 +57,7 @@ author:
 
   # Social media
   artstation       : # Username
-  bluesky          : # "bsky.app" # Replace this with you Bluesky username
+  bluesky          :
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "rafi-ridho-ramadhan-" # Username
+  linkedin         : "rafi-ridho-ramadhan-"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -95,7 +95,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : false
+future                   : true
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:

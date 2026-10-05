@@ -6,7 +6,36 @@ author_profile: true
 ---
 
 {% include base_path %}
+<link rel="stylesheet" href="{{ '/assets/css/research-cards.css' | relative_url }}">
 
-{% for post in site.portfolio %}
-  {% include archive-single.html %}
+<p class="research-intro">
+  Selected independent projects in computer vision, robotics perception, and 3D vision.
+  Project pages document the problem, implementation scope, evaluation plan, and—once available—verified experimental results.
+</p>
+
+<div class="research-list">
+{% for project in site.data.research.projects %}
+  <article class="research-card">
+    <a class="research-card__media" href="{{ project.webpage | relative_url }}" aria-label="Open {{ project.title }}">
+      <img src="{{ project.image | relative_url }}" alt="{{ project.short }} project thumbnail">
+    </a>
+
+    <div class="research-card__body">
+      <h2 class="research-card__title">{{ project.title }}</h2>
+      <p class="research-card__authors"><strong><u>{{ project.author }}</u></strong></p>
+      <p class="research-card__status">{{ project.status }}</p>
+
+      <div class="research-card__tags" aria-label="Research areas">
+        <span>{{ project.field }}</span>
+        <span>{{ project.subfield }}</span>
+      </div>
+
+      <div class="research-card__links">
+        {% if project.pdf %}<a href="{{ project.pdf | relative_url }}">PDF</a>{% endif %}
+        {% if project.webpage %}<a href="{{ project.webpage | relative_url }}">Webpage</a>{% endif %}
+        {% if project.code %}<a href="{{ project.code }}">Code</a>{% endif %}
+      </div>
+    </div>
+  </article>
 {% endfor %}
+</div>

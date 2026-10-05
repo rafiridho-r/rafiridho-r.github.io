@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#f3f1f7"/>
+<g fill="#7058a5" opacity=".7">
+<circle cx="110" cy="238" r="5"/><circle cx="140" cy="205" r="4"/><circle cx="184" cy="248" r="4"/><circle cx="215" cy="174" r="5"/>
+<circle cx="245" cy="226" r="4"/><circle cx="275" cy="192" r="5"/><circle cx="310" cy="242" r="4"/><circle cx="343" cy="165" r="5"/>
+<circle cx="382" cy="217" r="4"/><circle cx="417" cy="184" r="5"/><circle cx="458" cy="234" r="4"/><circle cx="492" cy="151" r="5"/>
+<circle cx="525" cy="211" r="4"/><circle cx="550" cy="252" r="5"/><circle cx="160" cy="140" r="4"/><circle cx="290" cy="126" r="4"/>
+</g>
+<g fill="none" stroke="#7058a5" stroke-width="5">
+<rect x="184" y="142" width="104" height="76" transform="skewX(-8)"/>
+<rect x="392" y="128" width="122" height="86" transform="skewX(-8)"/>
+</g>
+<path d="M82 278 H560 M92 250 H570 M105 220 H580" stroke="#cbc3da" stroke-width="2"/>
+<text x="66" y="76" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#493b6d">P3 · PointPillars</text>
+<text x="66" y="108" font-family="Arial,sans-serif" font-size="18" fill="#766b8f">3D detection &amp; point-cloud robustness</text>
+</svg>

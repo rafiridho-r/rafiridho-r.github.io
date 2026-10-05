@@ -11,6 +11,6 @@ I am an Electrical Engineering graduate from **Universitas Lampung**, Indonesia.
 
 During my undergraduate years, I combined academic study with hands-on engineering activities. I was involved with the **Fixed-Wing Division of the Unila Robotics and Automation team**, contributing to hardware integration, flight-system preparation, and system testing.
 
-I continue to develop my programming, mathematics, technical English, and engineering skills through independent study and project work.
+I continue to strengthen my programming, mathematics, technical English, and engineering skills through independent study and project work.
 
-For my technical and research work, see the [Research](/portfolio/) page. A concise academic and professional record is available on my [CV](/cv/).
+My technical and research work is collected on the [Research](/portfolio/) page. A concise academic and professional record is available on my [CV](/cv/).

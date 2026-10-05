@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#edf3f8"/>
+<rect x="42" y="52" width="556" height="256" rx="18" fill="#dde7f0"/>
+<rect x="202" y="108" width="158" height="112" fill="none" stroke="#1f5f8f" stroke-width="8"/>
+<rect x="170" y="82" width="222" height="164" fill="none" stroke="#67a5c8" stroke-width="3" stroke-dasharray="12 10"/>
+<circle cx="458" cy="145" r="30" fill="#b7ccdc"/>
+<circle cx="508" cy="210" r="22" fill="#c9d8e3"/>
+<path d="M83 271 C170 230 216 290 304 250 S455 208 555 250" fill="none" stroke="#7b9db4" stroke-width="7" stroke-linecap="round"/>
+<text x="70" y="98" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#17384e">P1 · CACF</text>
+<text x="70" y="130" font-family="Arial,sans-serif" font-size="18" fill="#4d6879">Visual tracking &amp; context update</text>
+</svg>
