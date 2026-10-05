@@ -1,1 +1,0 @@
-{"items":[{"title":"TODO corruption condition","note":"Same sample, same model checkpoint, controlled corruption only.","left":{"label":"Clean","src":"/assets/research/p3/TODO-clean.png","type":"image"},"right":{"label":"Corrupted","src":"/assets/research/p3/TODO-corrupted.png","type":"image"}}]}
