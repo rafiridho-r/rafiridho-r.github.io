@@ -1,12 +1,11 @@
-# Minimal navigation for the public academic site.
+# The following is the order of the links in the header of the website.
 main:
-  - title: "Home"
-    url: /
-
   - title: "Research"
     url: /portfolio/
 
   - title: "CV"
     url: /cv/
 
-  # Add Publications only after a real publication or public preprint exists.
+  # Enable when real content exists.
+  # - title: "Publications"
+  #   url: /publications/
