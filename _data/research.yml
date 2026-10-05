@@ -42,7 +42,7 @@ projects:
     short: "3D MOT"
     title: "Robust Ego-Motion-Aware 3D Multi-Object Tracking under Detection and Pose Uncertainty"
     author: "Rafi Ridho Ramadhan"
-    status: "Flagship · Planned"
+    status: "Planned"
     venue: "Independent research project"
     field: "3D Computer Vision · 3D Multi-Object Tracking"
     image: "/images/research/p4-3d-mot.svg"
