@@ -1,6 +1,6 @@
-# Main navigation: evidence-first, minimal, and research-oriented.
+# Minimal navigation for the public academic site.
 main:
-  - title: "About"
+  - title: "Home"
     url: /
 
   - title: "Research"
@@ -9,8 +9,4 @@ main:
   - title: "CV"
     url: /cv/
 
-  # Enable only when there is real content.
-  # - title: "Publications"
-  #   url: /publications/
-  # - title: "Research Notes"
-  #   url: /year-archive/
+  # Add Publications only after a real publication or public preprint exists.
