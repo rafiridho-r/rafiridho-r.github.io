@@ -60,3 +60,10 @@
 .research-citation{max-width:920px;margin:2.5rem auto;padding-top:1rem;border-top:1px solid var(--research-border)}.research-citation pre{white-space:pre-wrap;overflow-wrap:anywhere}.research-citation button{margin-top:.55rem}
 @media(max-width:900px){.research-progression{grid-template-columns:1fr}.research-progression__arrow{transform:rotate(90deg)}.research-project-card-grid{grid-template-columns:1fr}.research-local-nav{top:60px}}
 @media(max-width:760px){.research-key-numbers{grid-template-columns:repeat(2,1fr)}.research-gallery,.research-pair-gallery{grid-template-columns:1fr}.research-pair-card__media{grid-template-columns:1fr}}
+
+.research-home-hero__actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.15rem}
+.research-profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;margin:1rem 0 2rem}
+.research-profile-card{border:1px solid var(--research-border);border-radius:12px;padding:1rem 1.05rem;background:var(--research-card)}
+.research-profile-card strong{display:block;margin-bottom:.35rem}
+.research-profile-card span{color:var(--research-muted);font-size:.92rem;line-height:1.5}
+@media(max-width:760px){.research-profile-grid{grid-template-columns:1fr}}
