@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Academic CV"
+title: "Curriculum Vitae"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,46 +11,37 @@ redirect_from:
 
 Education
 ======
-* **B.Eng. in Electrical Engineering**, Universitas Lampung, 2026
-  * GPA: **3.87 / 4.00**, Cum Laude
-  * Ranked **2nd in the Electrical Engineering graduating cohort**, Graduation Period 8, Batch 1, 2026
-  * Top 5% of the Electrical Engineering Cohort 2022
+**B.Eng. in Electrical Engineering**, Universitas Lampung, 2026  
+GPA: **3.87 / 4.00**, Cum Laude  
+Ranked **2nd in the Electrical Engineering graduating cohort**, Graduation Period 8, Batch 1, 2026  
+Top 5% of the Electrical Engineering Cohort 2022
 
-Research Direction
+Research Interests
 ======
-* **Robust Object-Centric 3D Perception for Visual Navigation**
-* Computer vision, visual-centric robotics perception, 3D object detection, 3D tracking, visual ego-motion, and navigation-relevant perception
+Computer vision, visual-centric robotics perception, 3D object detection, 3D tracking, visual ego-motion, state estimation, and navigation-relevant perception.
 
-Independent Research Portfolio
+Current research direction: **Robust Object-Centric 3D Perception for Visual Navigation**.
+
+Research Projects
 ======
 {% for project in site.data.research_portfolio.projects %}
-* **{{ project.code }} — {{ project.title }}**  
-  * {{ project.capability }}  
-  * Status: {{ project.status }}
+**{{ project.code }} — {{ project.title }}**  
+{{ project.capability }} · {{ project.status }}
+
 {% endfor %}
 
-Prior Research Experience
+Research & Engineering Experience
 ======
-* Undergraduate thesis — spatio-temporal deep learning and temporal attention, with emphasis on benchmarking, robustness analysis, and model evaluation.
-  * Keep the full thesis title and application-domain details in the downloadable formal CV if required; the public research site prioritises the forward CV/robotics direction.
+**Undergraduate research, Universitas Lampung**  
+Spatio-temporal deep learning and temporal attention, with emphasis on controlled benchmarking, robustness analysis, cross-domain evaluation, and quantitative model evaluation.
+
+**Fixed-Wing Division, Unila Robotics and Automation**  
+Hardware integration, flight-system preparation, and system testing for a national student UAV competition.
 
 Technical Skills
 ======
-<!-- EDIT ONLY WITH SKILLS YOU CAN DEFEND IN AN INTERVIEW OR ORAL TECHNICAL REVIEW. -->
-* **Programming:** Python, C++
-* **Computer Vision / ML:** PyTorch, OpenCV
-* **Research tooling:** Git, reproducible experiment configuration, quantitative evaluation
+**Programming:** Python, C++  
+**Computer Vision / Machine Learning:** PyTorch, OpenCV  
+**Research tooling:** Git, reproducible experiment configuration, quantitative evaluation
 
-Selected Research Outputs
-======
-{% if site.publications.size > 0 %}
-<ul>{% for post in site.publications reversed %}{% include archive-single-cv.html %}{% endfor %}</ul>
-{% else %}
-*No publication or preprint is listed here until it exists and is publicly verifiable.*
-{% endif %}
-
-<!--
-Before publishing a downloadable PDF CV, replace this page with or link to the
-current formally reviewed CV. Do not include aspirational scholarships, target
-IELTS scores, hardware access, or technologies you cannot defend.
--->
+Research outputs and project links are added when they are publicly available and verifiable.
