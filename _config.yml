@@ -26,11 +26,11 @@ author:
   avatar           : "profile.jpeg"
   name             : "Rafi Ridho Ramadhan"
   pronouns         : "he/him" # example: "she/her"  
-  bio              : "Computer Vision & Robotics Perception — building towards robust object-centric 3D perception for visual navigation."
+  bio              : "Computer Vision & Robotics Perception — robust object-centric 3D perception for visual navigation."
   location         : "Lampung, Indonesia"
   employer         :
   github           : "rafiridho-r"
-  linkedin         : "rafi-ridho-ramadhan-"
+  
 
   # Academic websites
   academia         : # URL
@@ -66,7 +66,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : "https://www.linkedin.com/in/rafi-ridho-ramadhan-/" # Username
+  linkedin         : "rafi-ridho-ramadhan-" # Username
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
