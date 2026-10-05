@@ -1,61 +1,12 @@
 ---
-layout: research-index
+layout: archive
 title: "Research"
 permalink: /portfolio/
-author_profile: false
+author_profile: true
 ---
 
-{% assign rp = site.data.research_portfolio %}
+{% include base_path %}
 
-<header class="academic-research-header">
-  <h1>Research</h1>
-  <p>
-    My research interests are in computer vision and visual-centric robotics perception, particularly
-    <strong>{{ rp.research_identity | downcase }}</strong>.
-  </p>
-  <p class="academic-research-header__note">
-    Current programme: tracking and optimisation → visual ego-motion → learned 3D perception → robust 3D multi-object tracking.
-  </p>
-</header>
-
-<section class="academic-research-section">
-  <h2>Selected projects</h2>
-
-  <div class="academic-work-list">
-  {% for project in rp.projects %}
-    <article class="academic-work-item">
-      <div class="academic-work-item__meta">
-        {{ project.code }} · {{ project.capability }} · {{ project.status }}
-      </div>
-      <h3>{{ project.title }}</h3>
-      <p>{{ project.question }}</p>
-
-      {% if project.url %}
-        <p class="academic-work-item__links">
-          <a href="{{ project.url | relative_url }}">Project page</a>
-        </p>
-      {% endif %}
-    </article>
-  {% endfor %}
-  </div>
-</section>
-
-<section class="academic-research-section">
-  <h2>Research approach</h2>
-  <p>
-    I use reproductions to establish technical ownership before extending a method or studying its failure modes.
-    Public project pages are intended to document the method, experimental protocol, quantitative results,
-    ablations where appropriate, failure analysis, and reproducibility information.
-  </p>
-</section>
-
-<section class="academic-research-section academic-research-section--links">
-  <h2>Links</h2>
-  <p>
-    <a href="/cv/">Academic CV</a>
-    <span>·</span>
-    <a href="https://github.com/rafiridho-r">GitHub</a>
-    <span>·</span>
-    <a href="https://www.linkedin.com/in/rafi-ridho-ramadhan-/">LinkedIn</a>
-  </p>
-</section>
+{% for post in site.portfolio %}
+  {% include archive-single.html %}
+{% endfor %}
