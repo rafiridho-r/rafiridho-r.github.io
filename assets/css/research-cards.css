@@ -1,0 +1,146 @@
+/* Research cards only. The rest of the site remains native Academic Pages. */
+.research-intro {
+  max-width: 52rem;
+  margin-bottom: 1.6rem;
+}
+
+.research-list {
+  display: grid;
+  gap: 1.35rem;
+  margin-top: 1.25rem;
+}
+
+.research-card {
+  display: flex;
+  gap: 1.65rem;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 1.15rem;
+  border: 1px solid rgba(120, 130, 145, 0.18);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(35, 45, 60, 0.10);
+}
+
+.research-card__media {
+  flex: 0 0 31%;
+  max-width: 19rem;
+  min-height: 13rem;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #eef2f7;
+}
+
+.research-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 13rem;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.research-card__media:hover img {
+  transform: scale(1.018);
+}
+
+.research-card__body {
+  min-width: 0;
+  flex: 1;
+  padding: .2rem .35rem .25rem 0;
+}
+
+.research-card__title {
+  margin: 0 0 .55rem;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  border-bottom: 0;
+}
+
+.research-card__authors,
+.research-card__status {
+  margin: .25rem 0;
+}
+
+.research-card__authors {
+  color: var(--global-text-color, #222);
+}
+
+.research-card__status {
+  color: #72777f;
+}
+
+.research-card__tags,
+.research-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.research-card__tags {
+  margin-top: .8rem;
+}
+
+.research-card__tags span {
+  display: inline-block;
+  padding: .25rem .65rem;
+  border-radius: 6px;
+  background: #ecebfd;
+  color: #4b46c8;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.research-card__links {
+  margin-top: 1rem;
+}
+
+.research-card__links a {
+  display: inline-block;
+  padding: .3rem .72rem;
+  border-radius: 999px;
+  background: #e7f7fa;
+  color: #3fb7c2;
+  font-size: .78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.research-card__links a:hover {
+  background: #d6f1f5;
+  color: #2699a4;
+}
+
+@media (max-width: 760px) {
+  .research-card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: .9rem;
+    border-radius: 14px;
+  }
+
+  .research-card__media {
+    max-width: none;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .research-card__media img {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .research-card__body {
+    padding: 0 .15rem .2rem;
+  }
+}
+
+[data-theme="dark"] .research-card {
+  background: #242424;
+  border-color: rgba(255,255,255,.12);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .research-card__status {
+  color: #b8b8b8;
+}
